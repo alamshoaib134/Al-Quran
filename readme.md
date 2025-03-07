@@ -7,6 +7,7 @@ This repository contains an exploratory data analysis of the Quran's English tra
 - `en.yusufali.csv` - Yusuf Ali's English translation of the Quran
 - `English.csv` - English translation dataset
 - `surah_names_english.csv` - Names of Surahs (chapters) in English
+
 ![Descriptive Statistics of Ayah Count per Surah](https://github.com/user-attachments/assets/d2b31335-abd4-4349-836c-c29f80979f01)
 
 ![Quran Word Cloud](https://github.com/user-attachments/assets/04eed1e6-1a03-4b33-8529-b067d6cd0e16)
