@@ -20,8 +20,9 @@ An intuitive web interface for searching Quranic verses:
 - Find specific verses and their translations
 - Get verse context and metadata
 - User-friendly interface powered by Gradio
-<img width="2056" alt="Screenshot 2025-03-08 at 3 54 09 AM" src="https://github.com/user-attachments/assets/ea1732e7-656b-43fe-9eb5-59ed98b3a3ca" />
 <img width="2056" alt="Screenshot 2025-03-08 at 3 53 52 AM" src="https://github.com/user-attachments/assets/7903305f-5b01-4866-8541-ef6a73b887e8" />
+
+<img width="2056" alt="Screenshot 2025-03-08 at 3 54 09 AM" src="https://github.com/user-attachments/assets/ea1732e7-656b-43fe-9eb5-59ed98b3a3ca" />
 
 
 ## Project Structure
