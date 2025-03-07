@@ -1,49 +1,62 @@
-# Al-Quran Analysis and Interactive Application
+# Al-Quran Repository
+A comprehensive tool for Quranic analysis and verse search
 
-This repository contains an exploratory data analysis of the Quran's English translations and an interactive Gradio web application for exploring Quranic verses.
+## Overview
+This repository consists of two main components:
 
-## Dataset Files
+### 1. Quranic Analysis (Jupyter Notebooks)
+A collection of interactive notebooks providing statistical insights about the Quran:
+- Word frequency distributions
+- Verse length analysis
+- Surah-wise statistics
+- Pattern analysis
+- Visualization of Quranic data
 
-- `en.yusufali.csv` - Yusuf Ali's English translation of the Quran
-- `English.csv` - English translation dataset
-- `surah_names_english.csv` - Names of Surahs (chapters) in English
+### 2. Verse Search Interface (Gradio App)
+An intuitive web interface for searching Quranic verses:
+- Search by keywords
+- Find specific verses and their translations
+- Get verse context and metadata
+- User-friendly interface powered by Gradio
 
-![Descriptive Statistics of Ayah Count per Surah](https://github.com/user-attachments/assets/d2b31335-abd4-4349-836c-c29f80979f01)
-
-![Quran Word Cloud](https://github.com/user-attachments/assets/04eed1e6-1a03-4b33-8529-b067d6cd0e16)
-
-## Project Components
-
-- `al-quran-english-exploratory-data-analysis.ipynb` - Jupyter notebook containing EDA of the Quran translations
-- `al_quran_gradio.py` - Core functionality for the Quran exploration application
-- `gradio_app.py` - Gradio web interface implementation
-
-## Setup and Installation
-
-1. Clone this repository
-2. Install the required dependencies:
-```sh
-pip install gradio pandas numpy
+## Project Structure
+```
+quran/
+├── datasets/          #  Quran datasets
+├── plots/               # Generated Plots
+├── src/              # Statistical analysis notebooks and Gradio application
+└── readme.md   # Dependencies
 ```
 
-## Usage
+## Getting Started
 
-To run the Gradio web application:
+### Prerequisites
+- Python 3.8+
+- Jupyter Notebook
+- Required packages
 
-```sh
-python gradio_app.py
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/alamshoaib134/Al-Quran.git
+cd Al-Quran
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-The application will start locally and provide a URL to access the interface in your web browser.
-
-## Data Analysis
-
-The exploratory data analysis notebook (`al-quran-english-exploratory-data-analysis.ipynb`) examines patterns and insights from the Quranic translations. Open it in Jupyter Notebook or Jupyter Lab to view the analysis.
+### Running the Analysis Notebooks
+```bash
+cd notebooks
+jupyter notebook
+```
 
 ## Contributing
-
-Feel free to open issues or submit pull requests for improvements.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This project is available under the MIT License.
+## Acknowledgments
+- Quran dataset sources
+- Contributors and maintainers
