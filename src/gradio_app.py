@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-quran_english_with_surah = pd.read_csv('/Users/salam9/Desktop/quran/en.yusufali.csv')
-surah_names = pd.read_csv('/Users/salam9/Desktop/quran/surah_names_english.csv', names=['Surah', 'Surah Name'])
+quran_english_with_surah = pd.read_csv('datasets/en.yusufali.csv')
+surah_names = pd.read_csv('datasets/surah_names_english.csv', names=['Surah', 'Surah Name'])
 surah_names["Surah Name"] = surah_names["Surah Name"].str[1:]
 quran_english_with_surah = quran_english_with_surah.merge(surah_names, on='Surah')
 quran_english_with_surah.index = pd.RangeIndex(start=1, stop=len(quran_english_with_surah) + 1)
