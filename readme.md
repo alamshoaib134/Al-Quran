@@ -1,62 +1,85 @@
-# Al-Quran Repository
-A comprehensive tool for Quranic analysis and verse search
+# Quran Explorer Application
 
-## Overview
-This repository consists of two main components:
+A user-friendly application for exploring the Holy Quran through its English translation, built with Python and Gradio.
 
-### 1. Quranic Analysis (Jupyter Notebooks)
-A collection of interactive notebooks providing statistical insights about the Quran:
-- Word frequency distributions
-- Verse length analysis
-- Surah-wise statistics
-- Pattern analysis
-- Visualization of Quranic data
+## Features
 
-### 2. Verse Search Interface (Gradio App)
-An intuitive web interface for searching Quranic verses:
-- Search by keywords
-- Find specific verses and their translations
-- Get verse context and metadata
-- User-friendly interface powered by Gradio
+- **Keyword Search**: Search for specific words or phrases across the entire Quran
+- **Statistical Analysis**: View visualizations and statistics about Quran's structure
+- **Surah Explorer**: Read complete Surahs with word cloud visualizations
 
 ## Project Structure
+
 ```
-quran/
-├── datasets/          #  Quran datasets
-├── plots/               # Generated Plots
-├── src/              # Statistical analysis notebooks and Gradio application
-└── readme.md   # Dependencies
+.
+├── datasets/               # Dataset files
+│   ├── en.yusufali.csv    # English translation
+│   └── surah_names_english.csv
+├── src/                   # Source code
+│   ├── components/        # Modular components
+│   │   ├── search_tab.py  # Search functionality
+│   │   ├── statistics_tab.py # Statistics and visualizations
+│   │   ├── surah_tab.py   # Surah display
+│   │   └── utils.py       # Shared utilities
+│   ├── styles/           # Styling
+│   │   └── styles.css     # CSS styles
+│   └── gradio_app.py     # Main application
+└── word_cloud/           # Word cloud images for each Surah
 ```
 
-## Getting Started
+## Dependencies
 
-### Prerequisites
-- Python 3.8+
-- Jupyter Notebook
-- Required packages
+- Python 3.7+
+- gradio
+- pandas
+- matplotlib
+- seaborn
+- re
 
-### Installation
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
 ```bash
-# Clone the repository
-git clone https://github.com/alamshoaib134/Al-Quran.git
-cd Al-Quran
-
-# Install dependencies
-pip install -r requirements.txt
+pip install gradio pandas matplotlib seaborn
 ```
 
-### Running the Analysis Notebooks
+## Running the Application
+
+Navigate to the project directory and run:
+
 ```bash
-cd notebooks
-jupyter notebook
+python src/gradio_app.py
 ```
+
+The application will be available at `http://localhost:7860` by default.
 
 ## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Adding New Features
+
+1. Create new components in the `src/components/` directory
+2. Update styles in `src/styles/styles.css`
+3. Import and integrate components in `src/gradio_app.py`
+
+### Code Structure
+
+- Each tab's functionality is contained in a separate module
+- Shared utilities are in `utils.py`
+- CSS styling is centralized in `styles.css`
+
+### Guidelines
+
+- Follow the existing code structure
+- Add appropriate documentation
+- Test new features thoroughly
+- Update README.md when adding new features
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-- Quran dataset sources
-- Contributors and maintainers
+Open source under MIT License
+
+## Credits
+
+- Quran translation: Yusuf Ali
+- Application development: [Your Team/Organization]
