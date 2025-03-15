@@ -3,6 +3,7 @@ from components.utils import load_data, load_css, get_surah_names_list
 from components.search_tab import create_search_tab
 from components.statistics_tab import create_statistics_tab
 from components.surah_tab import create_surah_tab
+from components.verse_locator_tab import create_verse_locator_tab
 
 def main():
     """
@@ -31,6 +32,9 @@ def main():
         search_tab = create_search_tab(quran_data)
         statistics_tab = create_statistics_tab(quran_data)
         surah_tab = create_surah_tab(quran_data, surah_names_list)
+        surah_counts = quran_data['Surah Name'].value_counts().reset_index()
+        surah_counts.columns = ['Surah Name', 'Ayah Count']
+        verse_locator_tab = create_verse_locator_tab(quran_data, surah_names_list, surah_counts)
     
     # Launch the interface
     iface.launch(share=True)
