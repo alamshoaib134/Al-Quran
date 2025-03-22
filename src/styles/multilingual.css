@@ -19,6 +19,15 @@
     padding: 0 10px;
 }
 
+/* Hindi text styles */
+.hindi-text {
+    font-family: "Mangal", "Noto Sans Devanagari", "Arial Unicode MS", serif;
+    font-size: 1.4em;
+    line-height: 2;
+    text-align: left;
+    padding: 0 10px;
+}
+
 /* English text styles */
 .english-text {
     font-family: "Times New Roman", serif;

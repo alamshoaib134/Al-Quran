@@ -14,7 +14,7 @@ def main():
     3. Surah-wise exploration with word clouds
     """
     # Load data
-    quran_data, quran_arabic, quran_urdu, surah_names = load_data()
+    quran_data, quran_arabic, quran_urdu, quran_hindi, surah_names = load_data()
     surah_names_list = get_surah_names_list(surah_names)
     
     # Create the Gradio interface
@@ -25,13 +25,13 @@ def main():
         and understand the Holy Quran through its original Arabic text and translations. Use the tabs below to:
         - Search for specific words or phrases
         - View statistical insights and visualizations
-        - Read complete Surahs in Arabic, Urdu, and English with word cloud visualizations
+        - Read complete Surahs in Arabic, Urdu, Hindi, and English with word cloud visualizations
         """)
         
         # Create tabs
         search_tab = create_search_tab(quran_data)
         statistics_tab = create_statistics_tab(quran_data)
-        surah_tab = create_surah_tab(quran_data, quran_arabic, quran_urdu, surah_names_list)
+        surah_tab = create_surah_tab(quran_data, quran_arabic, quran_urdu, quran_hindi, surah_names_list)
         surah_counts = quran_data['Surah Name'].value_counts().reset_index()
         surah_counts.columns = ['Surah Name', 'Ayah Count']
         verse_locator_tab = create_verse_locator_tab(quran_data, surah_names_list, surah_counts)
