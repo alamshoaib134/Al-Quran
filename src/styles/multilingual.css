@@ -1,0 +1,95 @@
+/* Multilingual Surah display styles */
+
+/* Arabic text styles */
+.arabic-text {
+    font-family: "Traditional Arabic", "Simplified Arabic", "Noto Naskh Arabic", "Arial Unicode MS", "Microsoft Uighur", serif;
+    font-size: 1.8em;
+    line-height: 2;
+    text-align: right;
+    direction: rtl;
+    padding: 0 10px;
+}
+
+/* Urdu text styles */
+.urdu-text {
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", "Urdu Typesetting", "Alvi Nastaleeq", serif;
+    font-size: 1.5em;
+    line-height: 2;
+    text-align: right;
+    padding: 0 10px;
+}
+
+/* English text styles */
+.english-text {
+    font-family: "Times New Roman", serif;
+    font-size: 1.2em;
+    line-height: 1.8;
+    text-align: left;
+    padding: 0 10px;
+}
+
+/* Common styles for verse containers */
+.verses-output {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+    min-height: 600px;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+}
+
+/* Override Gradio's default textarea styles */
+.verses-output textarea {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    resize: none !important;
+    height: 100% !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* Ensure proper text direction and alignment */
+.arabic-text textarea {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.urdu-text textarea {
+    text-align: right !important;
+}
+
+.english-text textarea {
+    text-align: left !important;
+}
+
+/* Word cloud container styles */
+.word-cloud-output {
+    margin-top: 1rem;
+}
+
+/* Responsive layout adjustments */
+@media screen and (max-width: 768px) {
+    .verses-output {
+        margin: 0.25rem;
+        padding: 1rem;
+        min-height: 400px;
+        max-height: 400px;
+    }
+    
+    .arabic-text {
+        font-size: 1.4em;
+    }
+    
+    .urdu-text {
+        font-size: 1.3em;
+    }
+    
+    .english-text {
+        font-size: 1.1em;
+    }
+}

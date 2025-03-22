@@ -55,11 +55,15 @@ body {
     color: #FFF2F2;
 }
 
+/* Import multilingual styles */
+@import url('multilingual.css');
+
 .verses-output textarea {
     font-size: 18px !important;
     line-height: 1.3 !important;
     height: 600px !important;
     width: 100% !important;
+    font-family: inherit !important;
 }
 
 .word-cloud-output {

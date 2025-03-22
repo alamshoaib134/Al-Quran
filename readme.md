@@ -6,7 +6,11 @@ A user-friendly application for exploring the Holy Quran through its English tra
 
 - **Keyword Search**: Search for specific words or phrases across the entire Quran
 - **Statistical Analysis**: View visualizations and statistics about Quran's structure
-- **Surah Explorer**: Read complete Surahs with word cloud visualizations
+- **Multilingual Surah Explorer**:
+  - Read complete Surahs in Arabic, Urdu, and English
+  - Side-by-side translation comparison
+  - Word cloud visualizations
+  - RTL support for Arabic text
 
 ### 1. Quranic Analysis (Jupyter Notebooks)
 A collection of interactive notebooks providing statistical insights about the Quran:
@@ -36,6 +40,8 @@ An intuitive web interface for searching Quranic verses:
 .
 ├── datasets/               # Dataset files
 │   ├── en.yusufali.csv    # English translation
+│   ├── Arabic-Original.csv # Original Arabic text
+│   ├── Urdu.csv           # Urdu translation
 │   └── surah_names_english.csv
 ├── src/                   # Source code
 │   ├── components/        # Modular components

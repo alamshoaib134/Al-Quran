@@ -4,13 +4,29 @@ from base64 import b64encode
 import io
 
 def load_data():
-    """Load and preprocess Quran dataset with surah names"""
+    """Load and preprocess Quran datasets with translations"""
+    # Load English translation and Surah names
     quran_english_with_surah = pd.read_csv('datasets/en.yusufali.csv')
     surah_names = pd.read_csv('datasets/surah_names_english.csv', names=['Surah', 'Surah Name'])
     surah_names["Surah Name"] = surah_names["Surah Name"].str[1:]
+    
+    # Load Arabic and Urdu datasets with proper data types
+    quran_arabic = pd.read_csv('datasets/Arabic-Original.csv',
+                              names=['Surah', 'Verse', 'Text'],
+                              encoding='utf-8',
+                              sep='|',
+                              dtype={'Surah': int, 'Verse': int, 'Text': str})
+    quran_urdu = pd.read_csv('datasets/Urdu.csv',
+                            names=['Surah', 'Verse', 'Text'],
+                            encoding='utf-8',
+                            sep='|',
+                            dtype={'Surah': int, 'Verse': int, 'Text': str})
+    
+    # Merge English translation with Surah names
     quran_english_with_surah = quran_english_with_surah.merge(surah_names, on='Surah')
     quran_english_with_surah.index = pd.RangeIndex(start=1, stop=len(quran_english_with_surah) + 1)
-    return quran_english_with_surah, surah_names
+    
+    return quran_english_with_surah, quran_arabic, quran_urdu, surah_names
 
 def plt_to_html(plt):
     """Convert matplotlib plot to HTML img tag"""
