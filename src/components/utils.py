@@ -13,12 +13,12 @@ def load_data():
     # Load Arabic and Urdu datasets with proper data types
     quran_arabic = pd.read_csv('datasets/Arabic-Original.csv',
                               names=['Surah', 'Verse', 'Text'],
-                              encoding='utf-8',
+                              encoding='utf-8-sig',
                               sep='|',
                               dtype={'Surah': int, 'Verse': int, 'Text': str})
     quran_urdu = pd.read_csv('datasets/Urdu.csv',
                             names=['Surah', 'Verse', 'Text'],
-                            encoding='utf-8',
+                            encoding='utf-8-sig',
                             sep='|',
                             dtype={'Surah': int, 'Verse': int, 'Text': str})
     
