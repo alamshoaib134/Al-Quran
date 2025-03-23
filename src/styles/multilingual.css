@@ -28,6 +28,33 @@
     padding: 0 10px;
 }
 
+/* Bengali text styles */
+.bangla-text {
+    font-family: "Bangla", "Noto Sans Bengali", "Shonar Bangla", "Kalpurush", serif;
+    font-size: 1.4em;
+    line-height: 2;
+    text-align: left;
+    padding: 0 10px;
+}
+
+/* Tamil text styles */
+.tamil-text {
+    font-family: "Latha", "Noto Sans Tamil", "Arial Unicode MS", serif;
+    font-size: 1.4em;
+    line-height: 2;
+    text-align: left;
+    padding: 0 10px;
+}
+
+/* Malayalam text styles */
+.malayalam-text {
+    font-family: "Kartika", "Noto Sans Malayalam", "Arial Unicode MS", serif;
+    font-size: 1.4em;
+    line-height: 2;
+    text-align: left;
+    padding: 0 10px;
+}
+
 /* English text styles */
 .english-text {
     font-family: "Times New Roman", serif;

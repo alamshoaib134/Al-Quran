@@ -23,34 +23,42 @@ def load_data():
                              sep='|',
                              dtype={'Surah': int, 'Verse': int, 'Text': str})
     
-    # Load Hindi text file using the same format, with error handling
-    try:
-        quran_hindi = pd.read_csv('datasets/hindi.txt',
-                                 names=['Surah', 'Verse', 'Text'],
-                                 encoding='utf-8-sig',
-                                 sep='|',
-                                 comment='#',  # Skip lines starting with #
-                                 skip_blank_lines=True,
-                                 dtype={'Surah': str, 'Verse': str, 'Text': str})  # Load as strings first
-        
-        # Convert Surah and Verse to integers after loading
-        quran_hindi['Surah'] = pd.to_numeric(quran_hindi['Surah'], errors='coerce')
-        quran_hindi['Verse'] = pd.to_numeric(quran_hindi['Verse'], errors='coerce')
-        
-        # Remove any rows with invalid data
-        quran_hindi = quran_hindi.dropna(subset=['Surah', 'Verse'])
-        quran_hindi['Surah'] = quran_hindi['Surah'].astype(int)
-        quran_hindi['Verse'] = quran_hindi['Verse'].astype(int)
-    except Exception as e:
-        print(f"Error loading Hindi dataset: {e}")
-        # Create empty DataFrame with same structure if loading fails
-        quran_hindi = pd.DataFrame(columns=['Surah', 'Verse', 'Text'])
+    def load_translation(file_path, name):
+        """Helper function to load translation datasets with error handling"""
+        try:
+            df = pd.read_csv(file_path,
+                           names=['Surah', 'Verse', 'Text'],
+                           encoding='utf-8-sig',
+                           sep='|',
+                           comment='#',
+                           skip_blank_lines=True,
+                           dtype={'Surah': str, 'Verse': str, 'Text': str})
+            
+            # Convert Surah and Verse to integers
+            df['Surah'] = pd.to_numeric(df['Surah'], errors='coerce')
+            df['Verse'] = pd.to_numeric(df['Verse'], errors='coerce')
+            
+            # Remove any rows with invalid data
+            df = df.dropna(subset=['Surah', 'Verse'])
+            df['Surah'] = df['Surah'].astype(int)
+            df['Verse'] = df['Verse'].astype(int)
+            return df
+        except Exception as e:
+            print(f"Error loading {name} dataset: {e}")
+            return pd.DataFrame(columns=['Surah', 'Verse', 'Text'])
+
+    # Load translations using helper function
+    quran_hindi = load_translation('datasets/hindi.txt', 'Hindi')
+    quran_bangla = load_translation('datasets/Bangla.csv', 'Bengali')
+    quran_tamil = load_translation('datasets/Tamil.csv', 'Tamil')
+    quran_malayalam = load_translation('datasets/Malayalam.csv', 'Malayalam')
     
     # Merge English translation with Surah names
     quran_english_with_surah = quran_english_with_surah.merge(surah_names, on='Surah')
     quran_english_with_surah.index = pd.RangeIndex(start=1, stop=len(quran_english_with_surah) + 1)
     
-    return quran_english_with_surah, quran_arabic, quran_urdu, quran_hindi, surah_names
+    return (quran_english_with_surah, quran_arabic, quran_urdu, quran_hindi,
+            quran_bangla, quran_tamil, quran_malayalam, surah_names)
 
 def plt_to_html(plt):
     """Convert matplotlib plot to HTML img tag"""
