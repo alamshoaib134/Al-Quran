@@ -1,3 +1,5 @@
+Developed with 🧠 by **[Shoaib Alam](https://alamshoaib134.github.io/)** (AI Engineer at JPMC | NLP Researcher @ IIT Gandhinagar | Hybrid RAG Pioneer)
+---
 # Al-Quran Repository
 A user-friendly application for exploring the Holy Quran through its English translation, built with Python and Gradio.
 
